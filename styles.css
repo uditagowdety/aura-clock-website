@@ -1,5 +1,5 @@
 body {
-    background-image: url('bg1.jpeg'); /* Replace with your image path */
+    background-image: url('bg1.jpeg'); /* Default background */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -7,14 +7,13 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    position: relative /* Make the body a positioning context for the button */
+    font-family: 'Roboto', sans-serif;
+    position: relative; /* Make the body a positioning context */
 }
 
 .container {
     text-align: center;
     color: white;
-    font-family: 'Roboto', sans-serif;
     font-size: 3em;
 }
 
@@ -22,8 +21,8 @@ button {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    padding: 8px 16px; /* Make the button smaller */
-    font-size: 0.8em; /* Adjust the font size */
+    padding: 8px 16px;
+    font-size: 0.8em;
     cursor: pointer;
     border: none;
     background-color: #007bff;
@@ -34,4 +33,30 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.background-buttons {
+    position: absolute;
+    bottom: 100px; /* Adjusted position */
+    left: 100px; /* Space from the edge */
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: add a translucent background for contrast */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.bg-btn {
+    padding: 8px 12px;
+    margin-right: 8px;
+    font-size: 0.8em;
+    cursor: pointer;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.bg-btn:hover {
+    background-color: #218838;
 }

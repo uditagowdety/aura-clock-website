@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock</title>
+    <title>Aura Clock</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div id="clock"></div>
         <button id="fullscreen-btn">full</button>
+        <div class="background-buttons">
+            <button class="bg-btn 1" data-bg="bg1.jpeg">BG 1</button>
+            <button class="bg-btn 2" data-bg="bg2.jpeg">BG 2</button>
+            <button class="bg-btn 3" data-bg="bg3.jpeg">BG 3</button>
+        </div>
     </div>
 
     <script>
@@ -36,6 +43,14 @@
             } else {
                 document.exitFullscreen();
             }
+        });
+
+        // Background toggle functionality
+        document.querySelectorAll('.bg-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const bg = button.getAttribute('data-bg');
+                document.body.style.backgroundImage = `url('${bg}')`;
+            });
         });
     </script>
 </body>
